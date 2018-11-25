@@ -20,9 +20,9 @@ app.set('view engine', 'hbs');
 //     next();
 // });
 
-app.use((req, res, next) => {
-    res.render('maintainance.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintainance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -59,6 +59,14 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
         welcomeMessage: "welcome to about page"
+        //currentYear: new Date().getFullYear()
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('home.hbs', {
+        pageTitle: 'Project Detail Page',
+        welcomeMessage: "welcome to Our Portfolio"
         //currentYear: new Date().getFullYear()
     });
 });
